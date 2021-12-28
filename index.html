@@ -1,0 +1,87 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assn-6|Set-A|Que-3</title>
+    <style>
+        body {
+            background-color: #e8e9aa;
+            color: #615c5c;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 100%;
+            min-width: 400px;
+            padding: 30px;
+        }
+
+        label {
+            font-size: 20px;
+            font-style: oblique;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        input {
+            height: 50px;
+            font-size: 29px;
+            text-align: center;
+        }
+
+        #ans-here {
+            color: #615c5c;
+            border: lightslategray 1px solid;
+            padding: 10px;
+        }
+
+        .btn {
+            font-size: 23px;
+            padding: 17px 30px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <label for="factNum">
+            <h1>Enter number to check number is armstrong or not</h1>
+        </label>
+        <h2 id="ans-here">Ans-here</h2>
+        <input type="number" value="0" name="factNum" id="givenNumber" min="1" />
+
+        <button class="btn" onclick="solution()">Calculate</button>
+    </div>
+
+    <script>
+        function solution() {
+            let ans = document.getElementById("ans-here");
+            let number = document.getElementById("givenNumber").value;
+            let temp = number;
+            let sum = 0;
+            while(temp > 0){
+                let remainder = temp % 10;
+                sum = remainder * remainder * remainder;
+                // alert(sum);
+                temp = parseInt(temp /10);
+            }
+            if(sum == number){
+                ans.innerText = `${number} is Armstrong number`;
+         }
+         else{
+            ans.innerText = `${number} is not Armstrong number`;
+
+         }
+        }
+    </script>
+</body>
+
+</html>
